@@ -23,13 +23,13 @@ void BME280::init()
     //               config filter[2:0] = 100   filtre IIR à 16 coefficients
     //               config   =  000 100 00
     data_write[0] = BME280_CTRL_HUM_ADDR ;
-    data_write[1] = 0b00000001  ;
+    data_write[1] = ???????????  ;
     i2c.write(BME280_ADDRESS, data_write, 2);
     data_write[0] = BME280_CTRL_MEAS_ADDR ;
-    data_write[1] = 0b01010111  ;
+    data_write[1] = ??????????  ;
     i2c.write(BME280_ADDRESS, data_write, 2);
     data_write[0] = BME280_CONFIG_ADDR ;
-    data_write[1] = 0b00010000 ;
+    data_write[1] = ??????????? ;
     i2c.write(BME280_ADDRESS, data_write, 2);
 }
 
