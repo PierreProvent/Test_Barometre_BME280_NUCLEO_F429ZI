@@ -8,7 +8,7 @@ Serial pc(SERIAL_TX, SERIAL_RX);
 
 int main()
 {
-    double temp, press, hum, alt ;
+    double temp, press, hum ;
     pc.printf("\033[2J"); // Effacer la console TeraTerm
     pc.printf("\033[0;0H"); // Curseur en 0,0
     pc.printf("Temperature,pression, humidite Capteur BME280 Bosch Sensortec\n");
@@ -29,17 +29,11 @@ int main()
     while (1) {
         temp = mon_BME280.temperature() ;
         pc.printf("Temperature %.2lf C\n",temp) ;
-        press = mon_BME280.pression() ;
+        press = ??????????? ;
         pc.printf("Pression %.3lf hPa\n",press/100) ;
-        double A = press/101325;
-        double B = 1 / 5.25588;
-        alt = pow(A, B);
-        alt = 1.0 - alt;
-        alt = alt/0.0000225577;       
-        pc.printf("Altitude %.2lf m\n",alt) ;
-        hum = mon_BME280.humidite() ;
+        hum = ??????????? ;
         pc.printf("Humidite %.2lf %%\n",hum) ;
-        pc.printf("\033[4A");
+        pc.printf("\033[3A");
         wait(1);
     }
 }
